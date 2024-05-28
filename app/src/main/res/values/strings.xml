@@ -15,4 +15,11 @@
     <string name="total_users_text">Total users</string>
     <string name="are_you_sure_question_close">Are you sure you want to close the app?</string>
 
+    <!-- UserDetailFragment -->
+    <string name="title_toolbar_user_detail">User Detail</string>
+    <string name="id_text">Id:</string>
+    <string name="first_name_text">First name:</string>
+    <string name="last_name_text">Last name:</string>
+    <string name="email_text">Email:</string>
+
 </resources>
