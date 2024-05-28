@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.util.List" />
+
+        <import type="android.view.View" />
+
+        <import type="com.adrianraya.domain.repositories.Users" />
+
+        <variable
+            name="loading"
+            type="boolean" />
+
+        <variable
+            name="users"
+            type="List&lt;Users>" />
+
+        <variable
+            name="error"
+            type="String" />
+
+        <variable
+            name="totalUsers"
+            type="String" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        tools:context=".ui.main.MainFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:fitsSystemWindows="true">
+
+            <include
+                android:id="@+id/lyToolbar"
+                layout="@layout/toolbar" />
+
+            <ProgressBar
+                android:id="@+id/indeterminateProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorBlue"
+                android:visibility="@{loading ? View.VISIBLE: View.GONE}"  />
+
+            <LinearLayout
+                android:id="@+id/lyInformationUsers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_8">
+
+                <TextView
+                    android:id="@+id/tvSubtitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:text="@{@string/total_users_text + ' ' + totalUsers}"
+                    tools:text="5 users" />
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUserList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlue"
+        app:items="@{users}"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:spanCount="3"
+        app:visible="@{ error == null }"
+        tools:listitem="@layout/item_user"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
