@@ -9,4 +9,10 @@ interface UserAPI {
     suspend fun getUsersList(
         @Query("per_page") perPage: Int,
     ): UsersListResult
+
+    @Headers("Content-Type: application/json; charset=UTF-8")
+    @GET("users/{id}")
+    suspend fun getUserDetail(
+        @Path("id") userId: Int
+    ): UserDetailResult
 }

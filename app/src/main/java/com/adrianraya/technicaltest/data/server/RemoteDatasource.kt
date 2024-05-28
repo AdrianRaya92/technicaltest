@@ -19,10 +19,24 @@ class RemoteDatasource@Inject constructor(
             .toDomainModel()
     }
 
+    override suspend fun getUserDetail(id: Int): Either<Error, Users> = tryCall {
+        userApi
+            .getUserDetail(id)
+            .toDomainModel()
+    }
+
     private fun List<UsersListResult.UsersData>.toDomainModel(): List<Users> =
         map { it.toDomainModel() }
 
     private fun UsersListResult.UsersData.toDomainModel(): Users =
+        Users(
+            id,
+            email,
+            first_name,
+            last_name,
+            avatar)
+
+    private fun UserDetailResult.toDomainModel(): Users =
         Users(
             id,
             email,

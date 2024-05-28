@@ -6,4 +6,5 @@ import com.adrianraya.domain.repositories.Users
 
 interface UsersRemoteDataSource {
     suspend fun getUsersList(): Either<Error, List<Users>>
+    suspend fun getUserDetail(id: Int): Either<Error, Users>
 }

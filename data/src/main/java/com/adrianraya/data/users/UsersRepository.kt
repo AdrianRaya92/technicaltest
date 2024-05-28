@@ -14,12 +14,12 @@ class UsersRepository @Inject constructor(
     suspend fun usersTotal(): Int = localDataSource.getUsersTotal()
 
     suspend fun requestUsersList(): Error? {
-        val findComics = when {
+        val findUsers = when {
             localDataSource.isEmpty() -> true
             else -> false
         }
 
-        if (findComics) {
+        if (findUsers) {
             val users = remoteDataSource.getUsersList()
             return users.fold(ifLeft = { it }) {
                 localDataSource.save(it)
@@ -27,5 +27,12 @@ class UsersRepository @Inject constructor(
             }
         }
         return null
+    }
+
+    suspend fun requestUserDetail(id: Int): Error? {
+        val users = remoteDataSource.getUserDetail(id)
+        return users.fold(ifLeft = { it }) {
+            null
+        }
     }
 }
