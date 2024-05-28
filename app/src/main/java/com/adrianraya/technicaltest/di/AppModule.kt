@@ -1,6 +1,15 @@
 package com.adrianraya.technicaltest.di
 
-import com.adrianraya.technicaltest.server.ExampleService
+import android.app.Application
+import androidx.room.Room
+import com.adrianraya.data.users.datasource.UsersLocalDataSource
+import com.adrianraya.data.users.datasource.UsersRemoteDataSource
+import com.adrianraya.domain.UserApiData
+import com.adrianraya.technicaltest.data.database.UsersDatabase
+import com.adrianraya.technicaltest.data.database.UsersRoomDataSource
+import com.adrianraya.technicaltest.data.server.RemoteDatasource
+import com.adrianraya.technicaltest.data.server.UserAPI
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +28,19 @@ object AppModule {
     @Provides
     @Singleton
     @ApiUrl
-    fun provideApiUrl(): String = "https://gateway.marvel.com/"
+    fun provideApiUrl(): String = UserApiData.url
+
+    @Provides
+    @Singleton
+    fun provideDatabase(app: Application) = Room.databaseBuilder(
+        app,
+        UsersDatabase::class.java,
+        UserApiData.database
+    ).build()
+
+    @Provides
+    @Singleton
+    fun provideUsersDao(db: UsersDatabase) = db.usersDao()
 
     @Provides
     @Singleton
@@ -30,7 +51,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRemoteService(@ApiUrl apiUrl: String, okHttpClient: OkHttpClient): ExampleService {
+    fun provideRemoteService(@ApiUrl apiUrl: String, okHttpClient: OkHttpClient): UserAPI {
         return Retrofit.Builder()
             .baseUrl(apiUrl)
             .client(okHttpClient)
@@ -38,4 +59,14 @@ object AppModule {
             .build()
             .create()
     }
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class AppDataModule {
+    @Binds
+    abstract fun bindLocalDataSource(localDataSource: UsersRoomDataSource): UsersLocalDataSource
+
+    @Binds
+    abstract fun bindRemoteDataSource(remoteDataSource: RemoteDatasource): UsersRemoteDataSource
 }
