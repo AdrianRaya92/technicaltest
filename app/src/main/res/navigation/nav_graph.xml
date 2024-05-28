@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/user_detail_dest"
-        android:name="com.adrianraya.technicaltest.ui.list.UsersListFragment"
+        android:name="com.adrianraya.technicaltest.ui.detail.UserDetailFragment"
         android:label="fragment_user_detail"
         tools:layout="@layout/fragment_user_detail" >
         <argument

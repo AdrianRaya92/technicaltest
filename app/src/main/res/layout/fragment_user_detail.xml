@@ -4,22 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <import type="android.view.View" />
-
-        <import type="com.adrianraya.domain.repositories.UserDetail" />
+        <import type="com.adrianraya.domain.repositories.Users" />
 
         <variable
             name="user"
-            type="com.adrianraya.domain.repositories.UserDetail" />
-
-        <variable
-            name="loading"
-            type="boolean" />
-
-        <variable
-            name="error"
-            type="String" />
+            type="com.adrianraya.domain.repositories.Users" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -46,19 +35,11 @@
             android:orientation="vertical"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <ProgressBar
-                android:id="@+id/indeterminateProgressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:indeterminate="true"
-                android:indeterminateTint="@color/colorBlue"
-                android:visibility="@{loading ? View.VISIBLE: View.GONE}"  />
-
             <ImageView
                 android:id="@+id/ivAvatar"
                 android:layout_width="190dp"
                 android:layout_height="190dp"
+                android:layout_marginTop="@dimen/text_size_16"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
                 app:url="@{user.avatar}"
