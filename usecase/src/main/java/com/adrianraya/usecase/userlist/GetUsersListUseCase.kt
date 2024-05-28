@@ -1,4 +1,4 @@
-package com.adrianraya.usecase
+package com.adrianraya.usecase.userlist
 
 import com.adrianraya.data.users.UsersRepository
 import javax.inject.Inject

@@ -5,7 +5,7 @@ data class UsersListResult(
     val per_page: Int,
     val total: Int,
     val total_pages: Int,
-    val data: List<UsersData>,
+    val data: List<UsersData>
 ) {
 
     data class UsersData(

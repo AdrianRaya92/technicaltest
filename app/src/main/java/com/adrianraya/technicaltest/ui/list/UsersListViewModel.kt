@@ -6,9 +6,9 @@ import com.adrianraya.domain.repositories.Users
 import dagger.hilt.android.lifecycle.HiltViewModel
 import com.adrianraya.domain.Error
 import com.adrianraya.technicaltest.data.toError
-import com.adrianraya.usecase.GetUsersListTotalUseCase
-import com.adrianraya.usecase.GetUsersListUseCase
-import com.adrianraya.usecase.RequestUsersListUseCase
+import com.adrianraya.usecase.userlist.GetUsersListTotalUseCase
+import com.adrianraya.usecase.userlist.GetUsersListUseCase
+import com.adrianraya.usecase.userlist.RequestUsersListUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
