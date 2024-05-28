@@ -6,6 +6,7 @@ import com.adrianraya.domain.UserApiData
 import com.adrianraya.domain.repositories.Users
 import com.adrianraya.technicaltest.data.tryCall
 import com.adrianraya.domain.Error
+import com.adrianraya.domain.repositories.UserDetail
 import javax.inject.Inject
 
 class RemoteDatasource@Inject constructor(
@@ -19,7 +20,7 @@ class RemoteDatasource@Inject constructor(
             .toDomainModel()
     }
 
-    override suspend fun getUserDetail(id: Int): Either<Error, Users> = tryCall {
+    override suspend fun getUserDetail(id: Int): Either<Error, UserDetail> = tryCall {
         userApi
             .getUserDetail(id)
             .toDomainModel()
@@ -36,8 +37,8 @@ class RemoteDatasource@Inject constructor(
             last_name,
             avatar)
 
-    private fun UserDetailResult.toDomainModel(): Users =
-        Users(
+    private fun UserDetailResult.toDomainModel(): UserDetail =
+        UserDetail(
             id,
             email,
             first_name,
