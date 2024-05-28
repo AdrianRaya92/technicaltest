@@ -3,6 +3,8 @@ package com.adrianraya.data.users
 import com.adrianraya.data.users.datasource.UsersLocalDataSource
 import com.adrianraya.data.users.datasource.UsersRemoteDataSource
 import com.adrianraya.domain.Error
+import com.adrianraya.domain.repositories.Users
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class UsersRepository @Inject constructor(
@@ -10,6 +12,8 @@ class UsersRepository @Inject constructor(
     private val remoteDataSource: UsersRemoteDataSource
 ) {
     val users get() = localDataSource.users
+
+    fun findById(id: Int): Flow<Users> = localDataSource.findById(id)
 
     suspend fun usersTotal(): Int = localDataSource.getUsersTotal()
 
