@@ -1,7 +1,6 @@
 package com.adrianraya.technicaltest.ui.list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class UsersListFragment : Fragment(R.layout.fragment_users_list) {
-    private val TAG = javaClass.simpleName
     private val viewModel: UsersListViewModel by viewModels()
     private lateinit var usersState: UsersState
     private val adapter = UsersListAdapter {
@@ -38,15 +36,5 @@ class UsersListFragment : Fragment(R.layout.fragment_users_list) {
             }
         }
         viewModel.onUiReady()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(TAG, "onDestroy")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        Log.d(TAG, "onDestroyView")
     }
 }
