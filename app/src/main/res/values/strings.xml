@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Technical Test</string>
+
+    <!-- Common -->
+    <string name="common_yes">Yes</string>
+    <string name="common_no">No</string>
+
+    <!-- Error -->
+    <string name="connectivity_error">Connectivity Error</string>
+    <string name="server_error">\"Server Error: \"</string>
+    <string name="unknown_error">\"Unknown Error: \"</string>
+
+    <!-- UserListFragment -->
+    <string name="title_toolbar_user_list">Users List</string>
+    <string name="total_users_text">Total users</string>
+    <string name="are_you_sure_question_close">Are you sure you want to close the app?</string>
+
 </resources>

@@ -20,4 +20,7 @@
     <color name="colorBlue">#003594</color>
     <color name="colorRed">#E60026</color>
     <color name="colorGreen">#5FA82A</color>
+
+    <color name="colorDisabledGray">#BDBDBD</color>
+    <color name="colorLightGray">#F9F9F9</color>
 </resources>
