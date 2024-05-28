@@ -8,8 +8,8 @@
 
     <fragment
         android:id="@+id/main_dest"
-        android:name="com.adrianraya.technicaltest.ui.main.MainFragment"
+        android:name="com.adrianraya.technicaltest.ui.list.UsersListFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_users_list" >
     </fragment>
 </navigation>

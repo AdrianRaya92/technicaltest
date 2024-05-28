@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite">
+
+        <ImageButton
+            android:id="@+id/btBack"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorWhite"
+            android:src="@drawable/ic_arrow_back_blue"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/tvTitleToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_toEndOf="@+id/btBack"
+            android:gravity="center"
+            android:lineSpacingExtra="-6sp"
+            android:textAppearance="@style/toolbar_text"
+            app:layout_constraintStart_toEndOf="@+id/btBack"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RelativeOverlap"
+            tools:text="Title toolbar" />
+
+    </RelativeLayout>
+
+</layout>

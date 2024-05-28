@@ -38,7 +38,7 @@ android {
         jvmTarget = '17'
     }
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 }
 
@@ -60,6 +60,11 @@ dependencies {
 
     implementation Libs.AndroidX.Navigation.fragmentKtx
     implementation Libs.AndroidX.Navigation.uiKtx
+
+    implementation Libs.Shimmer.shimmer
+
+    implementation Libs.Glide.glide
+    kapt Libs.Glide.compiler
 
     implementation Libs.AndroidX.Room.runtime
     implementation Libs.AndroidX.Room.ktx
