@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Text -->
+    <style name="example_text">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">@color/colorBlack</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">10</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Toolbar text -->
+    <style name="toolbar_text">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Toolbar information text -->
+    <style name="toolbar_information_text">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Description details text -->
+    <style name="details_text">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <!-- Resume details text -->
+    <style name="resume_text">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+    </style>
+
+</resources>
