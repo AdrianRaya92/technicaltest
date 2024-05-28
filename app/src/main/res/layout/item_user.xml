@@ -45,21 +45,7 @@
             android:minLines="3"
             android:padding="1dp"
             android:text="@{users.first_name + ' ' + users.last_name}"
-            android:textAppearance="@style/titleItem"
+            style = "@style/titleItem"
             tools:text="Adrian Raya Hernandez" />
-
-        <TextView
-            android:id="@+id/tv_user_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/colorWhite"
-            android:gravity="center"
-            android:lines="3"
-            android:minLines="3"
-            android:padding="1dp"
-            android:text="@{users.email}"
-            android:textAppearance="@style/subtitleItem"
-            tools:text="adrian@example.com" />
     </LinearLayout>
 </layout>

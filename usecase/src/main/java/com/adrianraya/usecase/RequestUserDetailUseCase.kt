@@ -1,4 +1,4 @@
-package com.adrianraya.usecase.userdetail
+package com.adrianraya.usecase
 
 import com.adrianraya.data.users.UsersRepository
 import com.adrianraya.domain.Error
