@@ -22,6 +22,10 @@
         <variable
             name="error"
             type="String" />
+
+        <variable
+            name="userInfoVisibility"
+            type="Integer" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -56,6 +60,109 @@
                 android:indeterminate="true"
                 android:indeterminateTint="@color/colorBlue"
                 android:visibility="@{loading ? View.VISIBLE: View.GONE}"  />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSearch"
+                style="@style/informationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16"
+                android:gravity="start"
+                android:text="@string/search_information_text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputIdUser"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    style="@style/CustomTextInputLayoutStyle"
+                    android:layout_margin="@dimen/margin_16">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etIdUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:maxLength="50"
+                        android:minHeight="50dp"
+                        android:textAppearance="@style/input_text"
+                        android:textColor="@drawable/text_field"
+                        android:hint="@string/input_text_user_id"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/margin_16"
+                    android:adjustViewBounds="true"
+                    android:text="@string/text_button_search_user"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.09"
+                    android:background="@drawable/bt_background_enable"
+                    android:textColor="@color/colorWhite"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id = "@+id/lyUserNodFound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:visibility="@{error != null &amp;&amp; !error.isEmpty() ? View.VISIBLE : View.GONE}"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="@dimen/size_140"
+                android:layout_height="@dimen/size_140"
+                android:layout_marginTop="@dimen/margin_64"
+                android:gravity="center_horizontal"
+                app:srcCompat="@android:drawable/ic_menu_myplaces"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvNotUser"
+                style="@style/titleItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_8"
+                android:text="@string/user_not_found" />
+
+            <TextView
+                android:id="@+id/tvError"
+                style="@style/titleItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_8"
+                android:text="@{error}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id = "@+id/lyUserInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="@{userInfoVisibility}" >
 
             <ImageView
                 android:id="@+id/ivAvatar"
@@ -111,6 +218,8 @@
                 android:padding="@dimen/margin_8"
                 android:text="@{@string/email_text + ' ' + user.email}"
                 tools:text="Email" />
+
+        </LinearLayout>
 
         </LinearLayout>
 
