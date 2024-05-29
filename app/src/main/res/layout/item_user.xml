@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.adrianraya.domain.repositories.Users" />
+
+        <variable
+            name="users"
+            type="com.adrianraya.domain.repositories.Users" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_user"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:scaleType="centerCrop"
+                app:url="@{users.avatar}"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="ContentDescription"  />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:lines="3"
+            android:minLines="3"
+            android:padding="1dp"
+            android:text="@{users.first_name + ' ' + users.last_name}"
+            style = "@style/titleItem"
+            tools:text="Adrian Raya Hernandez" />
+    </LinearLayout>
+</layout>

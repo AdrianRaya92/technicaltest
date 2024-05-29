@@ -1,58 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        style="@style/example_text"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="@dimen/text_size_64"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data />
 
-    <androidx.appcompat.widget.AppCompatButton
-        style="@style/example_text"
-        android:adjustViewBounds="true"
-        android:gravity="center"
-        android:id="@+id/btnNewComics"
-        android:layout_height="@dimen/size_50"
-        android:layout_width="@dimen/size_140"
-        android:text="example"
-        android:textSize="@dimen/text_size_20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
 
-    <androidx.appcompat.widget.AppCompatButton
-        style="@style/example_text"
-        android:adjustViewBounds="true"
-        android:gravity="center"
-        android:id="@+id/btnReaderComics"
-        android:layout_height="@dimen/size_50"
-        android:layout_marginTop="@dimen/margin_64"
-        android:layout_width="@dimen/size_140"
-        android:text="example"
-        android:textSize="@dimen/text_size_20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnNewComics"
-        tools:ignore="ContentDescription" />
 
-    <TextView
-        style="@style/example_text"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="example"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:fitsSystemWindows="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <include
+                android:id="@+id/lyToolbar"
+                layout="@layout/toolbar" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/size_140"
+            android:layout_height="@dimen/size_140"
+            android:layout_marginTop="@dimen/margin_128"
+            app:srcCompat="@android:drawable/ic_menu_agenda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnList"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/margin_128"
+            android:adjustViewBounds="true"
+            android:gravity="center"
+            android:text="@string/text_button_list"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            android:letterSpacing="0.09"
+            android:background="@drawable/bt_background_enable"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSearchUser"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/margin_64"
+            android:adjustViewBounds="true"
+            android:gravity="center"
+            android:text="@string/text_button_search"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            android:letterSpacing="0.09"
+            android:background="@drawable/bt_background_enable"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnList"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/author"
+            android:textColor="@color/colorBlack"
+            android:layout_marginBottom="@dimen/margin_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

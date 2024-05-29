@@ -11,5 +11,39 @@
         android:name="com.adrianraya.technicaltest.ui.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main_to_list"
+            app:destination="@id/users_list_dest" />
+        <action
+            android:id="@+id/action_main_to_search_user"
+            app:destination="@id/search_user_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/users_list_dest"
+        android:name="com.adrianraya.technicaltest.ui.list.UsersListFragment"
+        android:label="fragment_users_list"
+        tools:layout="@layout/fragment_users_list" >
+        <action
+            android:id="@+id/action_list_to_detail"
+            app:destination="@id/user_detail_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/user_detail_dest"
+        android:name="com.adrianraya.technicaltest.ui.detail.UserDetailFragment"
+        android:label="fragment_user_detail"
+        tools:layout="@layout/fragment_user_detail" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_user_dest"
+        android:name="com.adrianraya.technicaltest.ui.search.SearchUserFragment"
+        android:label="fragment_search_user"
+        tools:layout="@layout/fragment_search_user" >
     </fragment>
 </navigation>

@@ -14,16 +14,15 @@
 
     <!-- Toolbar text -->
     <style name="toolbar_text">
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:letterSpacing">0.1</item>
-        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/colorBlue</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
-        <item name="android:textAllCaps">true</item>
     </style>
 
     <!-- Toolbar information text -->
     <style name="toolbar_information_text">
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorBlue</item>
         <item name="android:letterSpacing">0.1</item>
         <item name="android:textSize">@dimen/text_size_16</item>
         <item name="android:gravity">center</item>
@@ -40,6 +39,52 @@
     <style name="resume_text">
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:textSize">@dimen/text_size_20</item>
+    </style>
+
+    <!-- Title item text -->
+    <style name="titleItem">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBlack87</item>
+    </style>
+
+    <!-- Information text -->
+    <style name="informationText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/colorBlack87</item>
+    </style>
+
+    <!-- subtitle item text -->
+    <style name="subtitleItem">
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textColor">@color/colorBlack60</item>
+    </style>
+
+    <!-- Input edit text -->
+    <style name="input_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <!-- Edit text custom -->
+    <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeErrorColor">@drawable/input_error_box_stroke</item>
+        <item name="boxStrokeColor">@drawable/input_box_stroke</item>
+        <item name="helperTextTextAppearance">@style/assistive_t</item>
+        <item name="errorTextColor">@color/colorRed</item>
+        <item name="boxCornerRadiusTopStart">3.5dp</item>
+        <item name="boxCornerRadiusBottomEnd">3.5dp</item>
+        <item name="boxCornerRadiusBottomStart">3.5dp</item>
+        <item name="boxCornerRadiusTopEnd">3.5dp</item>
+    </style>
+
+    <style name="assistive_t">
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textColor">@color/colorBlack60</item>
     </style>
 
 </resources>

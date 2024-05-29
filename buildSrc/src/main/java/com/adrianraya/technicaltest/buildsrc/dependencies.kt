@@ -51,6 +51,17 @@ object Libs {
         }
     }
 
+    object Shimmer {
+        private const val version = "0.5.0"
+        const val shimmer = "com.facebook.shimmer:shimmer:$version"
+    }
+
+    object Glide {
+        private const val version = "4.15.1"
+        const val glide = "com.github.bumptech.glide:glide:$version"
+        const val compiler = "com.github.bumptech.glide:compiler:$version"
+    }
+
     object OkHttp3 {
         private const val version = "4.11.0"
         const val loginInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
