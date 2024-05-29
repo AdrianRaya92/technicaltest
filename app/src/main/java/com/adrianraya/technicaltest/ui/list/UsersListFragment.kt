@@ -28,11 +28,12 @@ class UsersListFragment : Fragment(R.layout.fragment_users_list) {
             lyToolbar.tvTitleToolbar.text = getString(R.string.title_toolbar_user_list)
             lyToolbar.btBack.setOnClickListener {  findNavController().popBackStack() }
 
-            viewLifecycleOwner.launchAndCollect(viewModel.state) {
-                loading = it.loading
-                users = it.users
-                error = it.error?.let(usersState::errorToString)
-                totalUsers = it.totalUsers
+            viewLifecycleOwner.launchAndCollect(viewModel.state) { uiState ->
+                loading = uiState.loading
+                users = uiState.users
+                error = uiState.error?.let(usersState::errorToString)
+                totalUsers = uiState.totalUsers
+                uiState.users?.let { adapter.submitList(it) }
             }
         }
         viewModel.onUiReady()

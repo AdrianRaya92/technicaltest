@@ -1,5 +1,6 @@
 package com.adrianraya.technicaltest.ui.search
 
+import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,19 +24,22 @@ class SearchUserViewModel @Inject constructor(
     fun onUiReady(userId: Int) {
         viewModelScope.launch {
             _state.value = _state.value.copy(
-                loading = true
+                loading = true,
+                userInfoVisibility = View.GONE
             )
             val (error, userDetail) = requestSearchUserUseCase(userId)
             _state.value = if (error == null) {
                 _state.value.copy(
                     loading = false,
                     user = userDetail,
-                    error = null
+                    error = null,
+                    userInfoVisibility = View.VISIBLE
                 )
             } else {
                 _state.value.copy(
                     loading = false,
-                    error = error
+                    error = error,
+                    userInfoVisibility = View.GONE
                 )
             }
         }
@@ -44,6 +48,7 @@ class SearchUserViewModel @Inject constructor(
     data class UiState(
         var loading: Boolean = false,
         val user: UserDetail? = null,
-        val error: Error? = null
+        val error: Error? = null,
+        val userInfoVisibility: Int = View.GONE
     )
 }
