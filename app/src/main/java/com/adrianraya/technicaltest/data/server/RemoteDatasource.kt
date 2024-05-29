@@ -23,6 +23,7 @@ class RemoteDatasource@Inject constructor(
     override suspend fun getUserDetail(id: Int): Either<Error, UserDetail> = tryCall {
         userApi
             .getUserDetail(id)
+            .data
             .toDomainModel()
     }
 
@@ -37,7 +38,7 @@ class RemoteDatasource@Inject constructor(
             last_name,
             avatar)
 
-    private fun UserDetailResult.toDomainModel(): UserDetail =
+    private fun UserDetailResult.UserDetailData.toDomainModel(): UserDetail =
         UserDetail(
             id,
             email,

@@ -3,6 +3,7 @@ package com.adrianraya.data.users
 import com.adrianraya.data.users.datasource.UsersLocalDataSource
 import com.adrianraya.data.users.datasource.UsersRemoteDataSource
 import com.adrianraya.domain.Error
+import com.adrianraya.domain.repositories.UserDetail
 import com.adrianraya.domain.repositories.Users
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -33,10 +34,8 @@ class UsersRepository @Inject constructor(
         return null
     }
 
-    suspend fun requestUserDetail(id: Int): Error? {
+    suspend fun requestUserDetail(id: Int): Pair<Error?, UserDetail?>{
         val users = remoteDataSource.getUserDetail(id)
-        return users.fold(ifLeft = { it }) {
-            null
+        return users.fold(ifLeft = { it to null }) { userDetail -> null to userDetail }
         }
-    }
 }
