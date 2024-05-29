@@ -57,7 +57,7 @@ class MainInstrumentationTest {
         Espresso.onView(withId(R.id.rvUserList))
             .perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                    2,
+                    6,
                     ViewActions.click()
                 )
             )
@@ -66,10 +66,9 @@ class MainInstrumentationTest {
             .check(
                 ViewAssertions.matches(
                     ViewMatchers.withText(
-                        "janet.weaver@reqres.in"
+                        "Email: janet.weaver@reqres.in"
                     )
                 )
             )
-
     }
 }
