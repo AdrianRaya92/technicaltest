@@ -27,4 +27,7 @@
     <string name="last_name_text">Last name:</string>
     <string name="email_text">Email:</string>
 
+    <!-- SearchUserFragment -->
+    <string name="title_toolbar_search_user">Search User</string>
+
 </resources>
