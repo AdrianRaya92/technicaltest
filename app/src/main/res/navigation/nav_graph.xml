@@ -42,8 +42,8 @@
 
     <fragment
         android:id="@+id/search_user_dest"
-        android:name="com.adrianraya.technicaltest.ui.list.UsersListFragment"
-        android:label="fragment_user_detail"
-        tools:layout="@layout/fragment_user_detail" >
+        android:name="com.adrianraya.technicaltest.ui.search.SearchUserFragment"
+        android:label="fragment_search_user"
+        tools:layout="@layout/fragment_search_user" >
     </fragment>
 </navigation>

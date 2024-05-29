@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.util.List" />
+
+        <import type="android.view.View" />
+
+        <import type="com.adrianraya.domain.repositories.UserDetail" />
+
+        <variable
+            name="user"
+            type="com.adrianraya.domain.repositories.UserDetail" />
+
+        <variable
+            name="loading"
+            type="boolean" />
+
+        <variable
+            name="error"
+            type="String" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.detail.UserDetailFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:fitsSystemWindows="true">
+
+            <include
+                android:id="@+id/lyToolbar"
+                layout="@layout/toolbar" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ProgressBar
+                android:id="@+id/indeterminateProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorBlue"
+                android:visibility="@{loading ? View.VISIBLE: View.GONE}"  />
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_marginTop="@dimen/text_size_16"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:url="@{user.avatar}"
+                tools:ignore="ContentDescription"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/tvId"
+                style="@style/titleItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_8"
+                android:text="@{@string/id_text + ' ' + user.id}"
+                tools:text="Id" />
+
+            <TextView
+                android:id="@+id/tvFirstName"
+                style="@style/titleItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_8"
+                android:text="@{@string/first_name_text + ' ' + user.first_name}"
+                tools:text="First name" />
+
+            <TextView
+                android:id="@+id/tvLastName"
+                style="@style/titleItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_8"
+                android:text="@{@string/last_name_text + ' ' + user.last_name}"
+                tools:text="Last name" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                style="@style/titleItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_8"
+                android:text="@{@string/email_text + ' ' + user.email}"
+                tools:text="Email" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
