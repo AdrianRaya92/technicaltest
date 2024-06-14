@@ -1,5 +1,3 @@
-import com.adrianraya.technicaltest.buildsrc.Libs
-
 buildscript {
 
     ext {
@@ -18,10 +16,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath Libs.androidGradlePlugin
-        classpath Libs.Kotlin.gradlePlugin
-        classpath Libs.AndroidX.Navigation.gradlePlugin
-        classpath Libs.Hilt.gradlePlugin
+        classpath libs.android.gradle.plugin
+        classpath libs.kotlin.gradle.plugin
+        classpath libs.androidx.navigation.gradle.plugin
+        classpath libs.hilt.gradle
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20'
     }
 }

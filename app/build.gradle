@@ -1,5 +1,3 @@
-import com.adrianraya.technicaltest.buildsrc.Libs
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -47,57 +45,57 @@ dependencies {
     implementation project(":domain")
     implementation project(":usecase")
 
-    implementation Libs.AndroidX.coreKtx
-    implementation Libs.AndroidX.appCompat
-    implementation Libs.AndroidX.recyclerView
-    implementation Libs.AndroidX.material
-    implementation Libs.AndroidX.constraintLayout
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.app.compat
+    implementation libs.androidx.recycler.view
+    implementation libs.androidx.material
+    implementation libs.androidx.constraint.layout
 
-    implementation Libs.AndroidX.Activity.ktx
+    implementation libs.androidx.activity
 
-    implementation Libs.AndroidX.Lifecycle.viewmodelKtx
-    implementation Libs.AndroidX.Lifecycle.runtimeKtx
+    implementation libs.androidx.lifecycle.view.model
+    implementation libs.androidx.lifecycle.runtime
 
-    implementation Libs.AndroidX.Navigation.fragmentKtx
-    implementation Libs.AndroidX.Navigation.uiKtx
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
 
-    implementation Libs.Shimmer.shimmer
+    implementation libs.glide
+    //noinspection KaptUsageInsteadOfKsp
+    kapt libs.glide.compiler
 
-    implementation Libs.Glide.glide
-    kapt Libs.Glide.compiler
+    implementation libs.androidx.room.runtime
+    implementation libs.androidx.room.ktx
+    //noinspection KaptUsageInsteadOfKsp
+    kapt libs.androidx.room.compiler
 
-    implementation Libs.AndroidX.Room.runtime
-    implementation Libs.AndroidX.Room.ktx
-    kapt Libs.AndroidX.Room.compiler
+    implementation libs.ok.http.interceptor
+    implementation libs.retrofit
+    implementation libs.retrofit.gson
 
-    implementation Libs.OkHttp3.loginInterceptor
-    implementation Libs.Retrofit.retrofit
-    implementation Libs.Retrofit.converterGson
+    implementation libs.arrow.core
 
-    implementation Libs.Arrow.core
-
-    implementation Libs.Hilt.android
-    kapt Libs.Hilt.compiler
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 
     testImplementation project(":testShared")
     testImplementation project(":appTestShared")
 
-    testImplementation Libs.JUnit.junit
-    testImplementation Libs.Mockito.kotlin
-    testImplementation Libs.Mockito.inline
-    testImplementation Libs.Kotlin.Coroutines.test
-    testImplementation Libs.turbine
+    testImplementation libs.junit
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.mockito.inline
+    testImplementation libs.coroutines.test
+    testImplementation libs.turbine
 
     androidTestImplementation project(":appTestShared")
-    androidTestImplementation Libs.AndroidX.Test.Ext.junit
-    androidTestImplementation Libs.AndroidX.Test.Espresso.contrib
-    androidTestImplementation Libs.AndroidX.Test.runner
-    androidTestImplementation Libs.AndroidX.Test.rules
-    androidTestImplementation Libs.Hilt.test
-    androidTestImplementation Libs.Kotlin.Coroutines.test
-    kaptAndroidTest Libs.Hilt.compiler
+    androidTestImplementation libs.androidx.test.junit
+    androidTestImplementation libs.androidx.test.espresso
+    androidTestImplementation libs.androidx.test.runner
+    androidTestImplementation libs.androidx.test.rules
+    androidTestImplementation libs.hilt.test
+    androidTestImplementation libs.coroutines.test
+    kaptAndroidTest libs.hilt.compiler
 
-    androidTestImplementation Libs.OkHttp3.mockWebServer
+    androidTestImplementation libs.ok.http.mock
 }
 
 kapt {

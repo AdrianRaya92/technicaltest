@@ -1,5 +1,3 @@
-import com.adrianraya.technicaltest.buildsrc.Libs
-
 plugins {
     id 'java-library'
     id 'org.jetbrains.kotlin.jvm'
@@ -9,14 +7,14 @@ plugins {
 dependencies {
     implementation project(":domain")
 
-    implementation Libs.Kotlin.Coroutines.core
-    implementation Libs.JavaX.inject
-    implementation Libs.Arrow.core
+    implementation libs.coroutines.core
+    implementation libs.javax.inject
+    implementation libs.arrow.core
 
     testImplementation project(":testShared")
-    testImplementation Libs.JUnit.junit
-    testImplementation Libs.Mockito.kotlin
-    testImplementation Libs.Mockito.inline
+    testImplementation libs.junit
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.mockito.inline
 }
 
 java {
