@@ -44,7 +44,7 @@
             android:lines="3"
             android:minLines="3"
             android:padding="1dp"
-            android:text="@{users.first_name + ' ' + users.last_name}"
+            android:text="@{users.firstName + ' ' + users.lastName}"
             style = "@style/titleItem"
             tools:text="Adrian Raya Hernandez" />
     </LinearLayout>

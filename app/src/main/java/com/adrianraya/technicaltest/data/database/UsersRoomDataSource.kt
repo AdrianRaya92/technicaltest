@@ -38,5 +38,5 @@ private fun DbUsers.toDomainModel(): Users =
 private fun List<Users>.fromDomainModel(): List<DbUsers> = map { it.fromDomainModel() }
 
 private fun Users.fromDomainModel(): DbUsers = DbUsers(
-    id, email, first_name, last_name, avatar
+    id, email, firstName, lastName, avatar
 )

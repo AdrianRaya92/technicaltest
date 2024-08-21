@@ -65,7 +65,7 @@
                 android:layout_marginTop="@dimen/margin_8"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/margin_8"
-                android:text="@{@string/first_name_text + ' ' + user.first_name}"
+                android:text="@{@string/first_name_text + ' ' + user.firstName}"
                 tools:text="First name" />
 
             <TextView
@@ -76,7 +76,7 @@
                 android:layout_marginTop="@dimen/margin_8"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/margin_8"
-                android:text="@{@string/last_name_text + ' ' + user.last_name}"
+                android:text="@{@string/last_name_text + ' ' + user.lastName}"
                 tools:text="Last name" />
 
             <TextView
